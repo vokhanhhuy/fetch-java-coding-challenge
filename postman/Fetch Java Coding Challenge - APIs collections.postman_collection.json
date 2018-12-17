@@ -1,0 +1,208 @@
+{
+	"info": {
+		"_postman_id": "918f0f91-99da-41ec-8350-7ac344261efa",
+		"name": "Fetch Java Coding Challenge - APIs collections",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Sign in",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"username\": \"micheal\",\n\t\"password\": \"123456\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8000/auth/signin",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"auth",
+						"signin"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Actuator authorized endpoints",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "999999",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "analyzer",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "localhost:8000/actuator/metrics",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"actuator",
+						"metrics"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "SpringDataRest: Get All Contact Resource",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:8000/contact",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"contact"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "SpringDataRest: Create Contact",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJtaWNoZWFsIiwiaWF0IjoxNTQ1MDY1NTkzLCJleHAiOjE1NDUwNjYxOTN9.ZrONdkgYRsloEEy_r9o6B5j9k9rH5HjBnTg0OQOQ3Eu4PBsGmj2MsG163Y2tkpf_4t4lCclfE_Irpv7b4OPM6g",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"fullName\": \"Huy Vo\",\n\t\"nickName\": \"HV\",\n\t\"title\": \"Software Engineer\",\n\t\"company\": \"KMS\",\n\t\"emailAddress\": \"huyvo@gmail.com\",\n\t\"phoneNumber\": \"0774663097\",\n\t\"birthDate\": \"1992-01-13\",\n\t\"note\": \"this is a test Spring Data Rest of resource Contact\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8000/contact",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"contact"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "SpringDataRest: Update Contact",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJtaWNoZWFsIiwiaWF0IjoxNTQ1MDY1NTkzLCJleHAiOjE1NDUwNjYxOTN9.ZrONdkgYRsloEEy_r9o6B5j9k9rH5HjBnTg0OQOQ3Eu4PBsGmj2MsG163Y2tkpf_4t4lCclfE_Irpv7b4OPM6g",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"fullName\": \"Vo KHanh Huy\",\n\t\"nickName\": \"HV\",\n\t\"title\": \"Java Software Engineer\",\n\t\"company\": \"KMS\",\n\t\"emailAddress\": \"huyvo@gmail.com\",\n\t\"phoneNumber\": \"0774663097\",\n\t\"birthDate\": \"1992-01-13\",\n\t\"note\": \"this is a test Spring Data Rest of resource Contact\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8000/contact/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"contact",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "SpringDataRest: Delete Contact",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJtaWNoZWFsIiwiaWF0IjoxNTQ1MDY1NTkzLCJleHAiOjE1NDUwNjYxOTN9.ZrONdkgYRsloEEy_r9o6B5j9k9rH5HjBnTg0OQOQ3Eu4PBsGmj2MsG163Y2tkpf_4t4lCclfE_Irpv7b4OPM6g",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:8000/contact/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"contact",
+						"1"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
